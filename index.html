@@ -1,0 +1,315 @@
+import React, { useState } from 'react';
+import { ChevronDown, ChevronUp, TrendingUp, Users, ShoppingCart, Eye, Heart, BarChart3, Smartphone, Palette, Video, Sparkles } from 'lucide-react';
+
+export default function Portfolio() {
+  const [expandedCase, setExpandedCase] = useState(null);
+
+  const toggleCase = (index) => {
+    setExpandedCase(expandedCase === index ? null : index);
+  };
+
+  const cases = [
+    {
+      title: "Estrategia de Contenido Multiplataforma",
+      subtitle: "Instagram, Facebook & TikTok",
+      icon: Smartphone,
+      color: "from-purple-500 to-pink-500",
+      challenge: "Lanzar una marca de lentes de sol desde cero en un mercado competitivo, sin presupuesto para publicidad paga. Además, tras sufrir el hackeo de la cuenta principal (4.5K seguidores), reconstruir la comunidad desde cero manteniendo la confianza de los clientes.",
+      solution: [
+        "Desarrollé calendario editorial semanal con contenido educativo (cuidado de ojos, tendencias), aspiracional (lifestyle) y comercial (productos)",
+        "Tras el hackeo, implementé estrategia de migración comunicando transparentemente a la comunidad y recuperando la confianza",
+        "Creé reels y TikToks con CapCut Pro siguiendo trends y adaptándolos a la identidad de marca",
+        "Implementé estrategia de hashtags segmentados y colaboraciones con microinfluencers",
+        "Diseñé piezas gráficas en Canva Pro con identidad visual cohesiva y profesional"
+      ],
+      results: [
+        { metric: "Engagement rate", value: "+180%", period: "cuenta reconstruida vs. anterior" },
+        { metric: "Seguidores orgánicos", value: "900+", period: "reconstruido en 8 meses" },
+        { metric: "Alcance promedio", value: "8K+", period: "por publicación destacada" },
+        { metric: "Tasa de guardados", value: "11%", period: "en contenido educativo" }
+      ],
+      tools: ["Instagram Business", "TikTok Analytics", "CapCut Pro", "Canva Pro", "Meta Business Suite"]
+    },
+    {
+      title: "Optimización de UX & Conversión Web",
+      subtitle: "E-commerce Shopify",
+      icon: ShoppingCart,
+      color: "from-blue-500 to-cyan-500",
+      challenge: "La tienda online tenía tráfico de redes sociales pero baja conversión. Los usuarios navegaban pero abandonaban sin completar la compra.",
+      solution: [
+        "Analicé el embudo de conversión en Google Analytics identificando puntos de fuga",
+        "Simplifiqué el proceso de checkout de 4 pasos a 2",
+        "Rediseñé las páginas de producto con mejor jerarquía visual, fotos de calidad y descripción persuasiva",
+        "Implementé pruebas sociales (reviews) y badges de confianza (envío seguro, garantía)",
+        "Optimicé tiempos de carga y mobile-first design",
+        "Agregué pop-up estratégico con descuento en primera compra"
+      ],
+      results: [
+        { metric: "Tasa de conversión", value: "+35%", period: "mejoras iterativas" },
+        { metric: "Tiempo en sitio", value: "+2:15 min", period: "vs. período inicial" },
+        { metric: "Tasa de rebote", value: "-22%", period: "optimización continua" },
+        { metric: "Sesiones recurrentes", value: "+40%", period: "usuarios que vuelven" }
+      ],
+      tools: ["Google Analytics", "Shopify", "Hotjar (heatmaps)", "Canva Pro", "Mailchimp"]
+    },
+    {
+      title: "Producción de Video Marketing con IA",
+      subtitle: "Contenido Multimedia Avanzado",
+      icon: Video,
+      color: "from-orange-500 to-red-500",
+      challenge: "Necesidad de producir contenido de video constante y de calidad sin equipo de producción ni presupuesto elevado.",
+      solution: [
+        "Implementé flujo de trabajo con IA para generar scripts y guiones optimizados",
+        "Edité videos profesionales en CapCut Pro con transiciones, efectos y música trendy",
+        "Creé avatares personalizados para videos educativos sobre cuidado de la vista",
+        "Desarrollé templates reutilizables en Canva Pro para mantener consistencia visual",
+        "Adapté cada video a los requisitos de cada plataforma (formato vertical, subtítulos, duración)"
+      ],
+      results: [
+        { metric: "Videos producidos", value: "100+", period: "en 2 años" },
+        { metric: "Engagement en reels", value: "14%", period: "promedio vs. 8% industria" },
+        { metric: "Shares/Envíos", value: "4x más", period: "vs. posts estáticos" },
+        { metric: "Tiempo de producción", value: "-65%", period: "con IA + templates" }
+      ],
+      tools: ["CapCut Pro", "ChatGPT", "Canva Pro", "Herramientas IA (avatares)", "Epidemic Sound"]
+    },
+    {
+      title: "Estrategia de Fidelización & Retención",
+      subtitle: "Email Marketing & CRM",
+      icon: Heart,
+      color: "from-pink-500 to-rose-500",
+      challenge: "Convertir compradores únicos en clientes recurrentes y construir comunidad de marca leal.",
+      solution: [
+        "Diseñé secuencia de emails automatizada: bienvenida, post-compra, educativo, recompra",
+        "Creé programa de beneficios exclusivos para clientes recurrentes",
+        "Implementé encuestas NPS para entender satisfacción y puntos de mejora",
+        "Desarrollé packaging memorable con tarjeta personalizada y mensaje de agradecimiento",
+        "Lancé iniciativa 'Behind the Brand' compartiendo el proceso creativo en Instagram Stories"
+      ],
+      results: [
+        { metric: "Tasa de recompra", value: "28%", period: "clientes primer año" },
+        { metric: "Open rate emails", value: "38%", period: "vs. 21% industria" },
+        { metric: "NPS Score", value: "72", period: "promotores" },
+        { metric: "Retención", value: "+85%", period: "clientes satisfechos que vuelven" }
+      ],
+      tools: ["Mailchimp", "Google Forms", "Instagram", "Canva Pro", "Shopify CRM"]
+    },
+    {
+      title: "Análisis de Métricas & Data-Driven Decisions",
+      subtitle: "KPIs & Optimización Continua",
+      icon: BarChart3,
+      color: "from-green-500 to-emerald-500",
+      challenge: "Tomar decisiones estratégicas basadas en datos reales, no intuición, para maximizar ROI de cada acción.",
+      solution: [
+        "Establecí dashboard de KPIs principales en Google Analytics: tráfico, conversión, AOV, LTV",
+        "Implementé tracking de eventos personalizados para entender comportamiento del usuario",
+        "Analicé métricas de RRSS semanalmente identificando contenido de mejor performance",
+        "Realicé A/B testing en copys, creatividades y CTAs",
+        "Creé reportes mensuales con insights accionables y recomendaciones estratégicas"
+      ],
+      results: [
+        { metric: "Decisiones data-driven", value: "100%", period: "del contenido estratégico" },
+        { metric: "ROI contenido orgánico", value: "+195%", period: "sin inversión publicitaria" },
+        { metric: "Costo por adquisición", value: "$0", period: "100% tráfico orgánico" },
+        { metric: "Tasa de conversión", value: "3.2%", period: "vs. 2% promedio e-commerce" }
+      ],
+      tools: ["Google Analytics 4", "Meta Insights", "TikTok Analytics", "Excel/Google Sheets", "Looker Studio"]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+      {/* Header */}
+      <header className="bg-white shadow-md sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Portfolio de Marketing Digital
+              </h1>
+              <p className="text-slate-600 mt-1">MAJOSHKA Sunglasses | 2022 - 2024</p>
+            </div>
+            <div className="hidden md:flex items-center gap-2 text-sm text-slate-600">
+              <Sparkles className="w-4 h-4 text-purple-500" />
+              <span>5 Casos de Éxito</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Intro */}
+      <section className="max-w-6xl mx-auto px-6 py-12">
+        <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white shadow-xl">
+          <h2 className="text-2xl font-bold mb-4">Sobre este proyecto</h2>
+          <p className="text-lg leading-relaxed mb-4">
+            Durante más de 2 años lideré la estrategia digital completa de <strong>MAJOSHKA</strong>, 
+            tienda online de lentes de sol, lanzada desde cero. Este portfolio documenta los principales desafíos 
+            enfrentados, las soluciones implementadas y los resultados medibles alcanzados.
+          </p>
+          <p className="text-sm leading-relaxed opacity-90">
+            💪 <strong>Resiliencia digital:</strong> Tras superar el hackeo de la cuenta principal (4.5K seguidores), 
+            reconstruí la comunidad desde cero aplicando todo lo aprendido, alcanzando 900+ seguidores 
+            con engagement más alto y audiencia más cualificada.
+          </p>
+          <div className="grid md:grid-cols-4 gap-4 mt-6">
+            <div className="bg-white/20 backdrop-blur rounded-lg p-4 text-center">
+              <TrendingUp className="w-8 h-8 mx-auto mb-2" />
+              <div className="text-2xl font-bold">180%</div>
+              <div className="text-sm">Engagement mejorado</div>
+            </div>
+            <div className="bg-white/20 backdrop-blur rounded-lg p-4 text-center">
+              <Users className="w-8 h-8 mx-auto mb-2" />
+              <div className="text-2xl font-bold">900+</div>
+              <div className="text-sm">Seguidores actuales</div>
+            </div>
+            <div className="bg-white/20 backdrop-blur rounded-lg p-4 text-center">
+              <ShoppingCart className="w-8 h-8 mx-auto mb-2" />
+              <div className="text-2xl font-bold">+35%</div>
+              <div className="text-sm">Conversión web</div>
+            </div>
+            <div className="bg-white/20 backdrop-blur rounded-lg p-4 text-center">
+              <Eye className="w-8 h-8 mx-auto mb-2" />
+              <div className="text-2xl font-bold">100%</div>
+              <div className="text-sm">Orgánico</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cases */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <h2 className="text-2xl font-bold text-slate-800 mb-8">Casos de Estudio</h2>
+        
+        <div className="space-y-6">
+          {cases.map((caseStudy, index) => {
+            const Icon = caseStudy.icon;
+            const isExpanded = expandedCase === index;
+            
+            return (
+              <div 
+                key={index}
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+              >
+                {/* Case Header */}
+                <button
+                  onClick={() => toggleCase(index)}
+                  className="w-full p-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${caseStudy.color} flex items-center justify-center`}>
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-800">{caseStudy.title}</h3>
+                      <p className="text-slate-600 text-sm">{caseStudy.subtitle}</p>
+                    </div>
+                  </div>
+                  {isExpanded ? (
+                    <ChevronUp className="w-6 h-6 text-slate-400" />
+                  ) : (
+                    <ChevronDown className="w-6 h-6 text-slate-400" />
+                  )}
+                </button>
+
+                {/* Case Content */}
+                {isExpanded && (
+                  <div className="px-6 pb-6 border-t border-slate-100">
+                    {/* Challenge */}
+                    <div className="mt-6">
+                      <h4 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                        Desafío
+                      </h4>
+                      <p className="text-slate-700 leading-relaxed">{caseStudy.challenge}</p>
+                    </div>
+
+                    {/* Solution */}
+                    <div className="mt-6">
+                      <h4 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                        Solución Implementada
+                      </h4>
+                      <ul className="space-y-2">
+                        {caseStudy.solution.map((item, i) => (
+                          <li key={i} className="flex gap-3 text-slate-700">
+                            <span className="text-blue-500 mt-1">▸</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Results */}
+                    <div className="mt-6">
+                      <h4 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                        Resultados Medibles
+                      </h4>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {caseStudy.results.map((result, i) => (
+                          <div key={i} className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg p-4 border border-slate-200">
+                            <div className={`text-2xl font-bold bg-gradient-to-r ${caseStudy.color} bg-clip-text text-transparent mb-1`}>
+                              {result.value}
+                            </div>
+                            <div className="text-sm font-medium text-slate-700">{result.metric}</div>
+                            <div className="text-xs text-slate-500 mt-1">{result.period}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Tools */}
+                    <div className="mt-6">
+                      <h4 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+                        Herramientas Utilizadas
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {caseStudy.tools.map((tool, i) => (
+                          <span 
+                            key={i}
+                            className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                          >
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Footer CTA */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-white text-center shadow-xl">
+          <h2 className="text-2xl font-bold mb-3">¿Quieres saber más sobre mi trabajo?</h2>
+          <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+            Este portfolio representa solo una muestra de mi experiencia en marketing digital, 
+            UX y producción de contenido. Estoy disponible para conversar sobre cómo puedo 
+            aportar valor a tu equipo.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="mailto:mariaj.carrizo@gmail.com" 
+              className="px-6 py-3 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
+            >
+              📧 mariaj.carrizo@gmail.com
+            </a>
+            <a 
+              href="https://www.majoshka.com.ar" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+            >
+              🛍️ Ver tienda online
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
